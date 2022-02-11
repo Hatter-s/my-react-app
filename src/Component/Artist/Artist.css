@@ -1,0 +1,31 @@
+#artist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 50px;
+  width: 50%;
+  margin: 0 auto auto 0;
+  background-color: coral;
+  margin: 0.5em;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#artist > img {
+  grid-area: 1 / 1 / 1 / 1;
+  height: 160px;
+  width: 160px;
+  border-radius: 10px;
+  border: 1px solid wheat;
+}
+
+#artist > h1 {
+  grid-area: 1 / 2 / span 2 / span 2;
+  text-align: center;
+  margin: 20px
+}
+
+#artist > div {
+  grid-area: 2 / 1 / 2 / span 3 ;
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,9 @@
+#album {
+  background-color: bisque;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 20%;
+  margin: 1em;
+  border-radius: 10px;
+  border: 1px solid black;
+}
