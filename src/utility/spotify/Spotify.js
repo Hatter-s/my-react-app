@@ -1,6 +1,6 @@
 let accessToken;
 const clientID = 'f19ec88c71e84e5981cbe3abc63b688e';
-const redirectURI = 'http://192.168.1.12:3000';
+const redirectURI = 'https://yoasobi-spotify.netlify.app';
 const yoasobiID = '64tJ2EAv1R6UaZqc4iOCyj';
 
 const Spotify = {
