@@ -87,7 +87,6 @@ const Spotify = {
       }
     }).then(response => response.json()
     ).then(jsonResponse => {
-      console.log(jsonResponse);
       return {
         popularity: jsonResponse.popularity,
         name: jsonResponse.name,

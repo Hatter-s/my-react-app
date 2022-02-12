@@ -5,7 +5,7 @@ export default function Track(props){
   let [name, setName] = useState('');
   useEffect(()=> {
     Spotify.getTrack(props.id).then(result => setName(result));
-  }, []);
+  }, [props.id]);
 
   return (
     <div>

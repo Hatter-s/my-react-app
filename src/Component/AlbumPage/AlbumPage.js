@@ -8,7 +8,7 @@ export default function AlbumPage() {
   let [album, setAlbum] = useState({});
   useEffect(()=> {
     Spotify.getAlbum(albumID).then(result => setAlbum(result));
-  }, []);
+  }, [albumID]);
 
   return (
     <div className="album-page bg-secondary p-1">
