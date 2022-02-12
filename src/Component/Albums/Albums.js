@@ -1,10 +1,14 @@
-import Album from "../Album/Album"
-import './Albums.css'
 
-export default function Albums(props) {
+import { Outlet } from 'react-router-dom';
+
+import './Albums.css';
+
+export default function Albums() {
+
   return (
     <div className="container" id="albums">
-      {props.albums.map(album => <Album album={album} key={album.id}/>)}
+      <h2>Album</h2>
+      <Outlet />
     </div>
   )
 }

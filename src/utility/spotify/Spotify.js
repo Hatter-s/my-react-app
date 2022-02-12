@@ -76,6 +76,38 @@ const Spotify = {
         }
       })
     })
+  },
+  getAlbum(albumID){
+    const accessToken = Spotify.getAccessToken();
+    
+    return fetch(`https://api.spotify.com/v1/albums/${albumID}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json()
+    ).then(jsonResponse => {
+      console.log(jsonResponse);
+      return {
+        popularity: jsonResponse.popularity,
+        name: jsonResponse.name,
+        image: jsonResponse.images[0].url,
+        tracks: jsonResponse.tracks.items,
+        releaseDate: jsonResponse['release_date'],
+        albumType: jsonResponse['album_type']
+      }
+    });
+  },
+  getTrack(trackID){
+    const accessToken = Spotify.getAccessToken();
+
+    return fetch(`https://api.spotify.com/v1/tracks/${trackID}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`
+      }
+    }).then(response => response.json()
+    ).then(jsonResponse => jsonResponse.name);
   }
 }
 

@@ -7,14 +7,26 @@ import './index.css';
 
 import App from './Component/App/App';
 import Search from './Component/Search/Search'
+import Albums from './Component/Albums/Albums';
+import AppIndex from './Component/Index/AppIndex';
+import ErorrPath from './Component/ErrorPath/ErrorPath';
+import AlbumPage from './Component/AlbumPage/AlbumPage';
+import AlbumsIndex from './Component/Index/AlbumsIndex';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App/>}/>
-        <Route path='/search' element={<Search/>}/>
+        <Route path='/' element={<App/>}>
+          <Route index element={<AppIndex/>}/>
+          <Route path='search' element={<Search/>}/>
+          <Route path='albums' element={<Albums/>}>
+            <Route index element={<AlbumsIndex/>}/>
+            <Route path=':albumId' element={<AlbumPage/>} />
+          </Route>
+        </Route>
+        <Route path='*' element={<ErorrPath/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
